@@ -15,18 +15,55 @@
                 <img src="images/logo.png" alt="logo de castle games">
             </a>
         </div>
-        <div>
+        <div class="head-derecha">
             <div class="carrito">
                 <img src="images/carrito.png" alt="">
             </div>
             <div class="perfil">
-                <a href="html/inicioSesion.html">xxxxxx</a>
             </div>
         </div>
     </header>
+    <div class="menu">
+        <div class="menu-h-oculto">
+            <div class="cont">
+                <h3>juegos populares</h3>
+            </div>
+            <div class="cont">
+                <h3>juegos de terror</h3>
+            </div>
+            <div class="cont">
+                <h3>juegos de disparos</h3>
+            </div>
+            <div class="cont">
+                <h3>juegos en oferta</h3>
+            </div>
+            <div class="cont">
+                <h3>juegos gratis</h3>
+            </div>
+        </div>
+        <div class="menu-u-oculto">
+            <div class="cont">
+                <h3>tu perfil</h3>
+            </div>
+            <div class="cont">
+                <h3>ajustes</h3>
+            </div>
+            <div class="cont">
+                <h3>tus compras</h3>
+            </div>
+            <div class="cont">
+                <h3>juegos favoritos</h3>
+            </div>
+            <div class="cont">
+                <a href="html/inicioSesion.html">
+                    <h3>cerrar sesión</h3>
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="home">
         <div class="juegos-mas-jugados">
-            <div class="ancho-total">
+            <div class="titulo-juego-mas-jugado ancho-total">
                 <h1>EL MÁS JUGADO</h1>
             </div>
             <div class="mas-jugados ancho-total">
@@ -50,7 +87,7 @@
         </div>
         <div class="carruseles">
             <div class="contenido">
-                <h2>Sugerencia</h2>
+                <h1>Sugerencia</h1>
                 <div class="carrusel">
                     <div class="flecha">
                         <img src="images/flecha.png" alt="">
@@ -68,17 +105,17 @@
                 </div>
             </div>
             <div class="contenido">
-                <h3>Shooter</h3>
+                <h2>Shooter</h2>
                 <div class="carrusel">
                     <div class="flecha">
                         <img src="images/flecha.png" alt="">
                     </div>
                     <div class="car-juegos">
-                        <img class="elemento grupo-1" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-1" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-1" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-1" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-1" src="images/carrusel/prueba.png" alt="">
+                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
+                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
+                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
+                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
+                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
                         <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
                         <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
                         <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
@@ -91,17 +128,17 @@
                 </div>
             </div>
             <div class="contenido">
-                <h3>De Pago</h3>
+                <h2>De Pago</h2>
                 <div class="carrusel">
                     <div class="flecha">
                         <img src="images/flecha.png" alt="">
                     </div>
                     <div class="car-juegos">
-                        <img class="elemento grupo-1" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-1" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-1" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-1" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-1" src="images/carrusel/prueba.png" alt="">
+                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
+                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
+                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
+                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
+                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
                         <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
                         <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
                         <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
@@ -114,7 +151,7 @@
                 </div>
             </div>
             <div class="contenido">
-                <h3>Aventura</h3>
+                <h2>Aventura</h2>
                 <div class="carrusel">
                     <div class="flecha">
                         <img src="images/flecha.png" alt="">
@@ -131,7 +168,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <footer>
             <div class="texto-footer">
@@ -142,11 +178,12 @@
                     <p>¡Explora nuestro catalogo y diviértete al máximo!</p>
                 </h3>
             </div>
-            <div>
-                <img class="img-foot" src="images/logo.png" alt="logo de castle games">
-            </div>
+            <a href="../index.html">
+                <img class="logo" src="../images/logo.png" alt="logo de castle games">
+            </a>
         </footer>
 </body>
-<script src="js/script.js"></script>
-
+<script src="js/menu-ham.js"></script>
+<script src="js/menu-usr.js"></script>
+<script src="js/carrusel.js"></script>
 </html>

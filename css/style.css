@@ -42,14 +42,23 @@ header{
     align-items: center;
     background-color: #440441;
     margin: 0px;
-    padding: 1%;
+    padding: 3%;
+}
+
+.head-derecha{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:10px;
+    align-items: center;
 }
 
 .btn-ham{
     height: 50px;
     width: 50px;
     background-color: #7236BD;
-
+    margin: 0px 7px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .perfil{
@@ -57,6 +66,7 @@ header{
     width: 50px;
     background-color: white;
     border-radius: 25px;
+    cursor: pointer;
 }
 
 footer{
@@ -64,6 +74,9 @@ footer{
     margin-top: 3%;
     width: 100%;
     height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .texto-footer{
@@ -91,8 +104,16 @@ footer{
     margin: 0;
 }
 
-.img-foot{
-    display: none;
+footer img{
+    margin-top: 7%;
+}
+
+@media only screen and (min-width: 1024px) {
+   
+    header{
+        padding: 1.5%;
+    }
+
 }
 
 /* index -------------------------------------------------------------------------------- */
@@ -104,7 +125,7 @@ body{
     flex-direction: column;
     margin: 0;
     padding: 0;
-    background: var(--fondo, linear-gradient(#200c1f,rgb(65, 28, 65),rgb(84, 33, 81),rgb(98, 30, 98) ));
+    background: var(--fondo, linear-gradient(#200c1f,rgb(65, 28, 65),rgb(94, 38, 90),rgb(74, 15, 74) ));
 }
 
 .ancho-total{
@@ -117,13 +138,17 @@ body{
     align-items: center;
 }
 
+.titulo-juego-mas-jugado{
+    display: flex;
+    justify-content: center;
+}
 
 .juegos-mas-jugados{
     display: flex;
     background-color: #25064B;
     align-items: center;
     flex-direction: column;
-    width: 50%;
+    width: 65%;
     border-radius: 50px;
     padding: 20px;
     margin: 4%;
@@ -131,7 +156,7 @@ body{
 
 .mas-jugados {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -145,37 +170,58 @@ body{
     width: 100%;
     height: 100%;
     border-radius: 30px;
-    box-shadow: 8px 8px 10px #7236BD;
+    box-shadow: 0px 10px 10px #7236BD;
 }
 
 .texto-mas-jugados{
     display: grid;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
     height: 50%;
-    width: 30%;
+    width: 100%;
     align-items: center;
-    margin: 0 0 0 20px;
+    margin: 20px 0px;
     justify-items: center;
     text-align: center;
 }
 
+.titulo-mas-jugado h1 p,.titulo-mas-jugado h4 p{
+    display: flex;
+    justify-content: center;}
+
 .div-boton-jugar{
-    width: 50%;
+    display: flex;
+    width: 75%;
+    height: 70%;
     background-color: #C50766;
-    box-shadow: 4px 5px 2px #8A0547;
+    box-shadow: 4px 5px 2px #8a0547;
     padding: 10px 10px 15px 10px;
     border-radius: 50px;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
 
+.div-boton-jugar a h2{
+    font-size: 2.5rem
+}
+
+
 .carruseles{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
     width: 95%;
+    position: relative;
+    z-index: 500;
+	transition: .2s ease all;
+}
+
+.carruseles, .carrusel{
+    scroll-behavior: smooth;
+    overflow: visible;
+
 }
 
 .contenido{
-    margin: 5% 0;
+    margin: 3% 0;
 }
 
 .carrusel{
@@ -188,11 +234,11 @@ body{
 
 .car-juegos{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 0fr 0fr;
     grid-gap: 1%;
-    background-color: #3B0A78;
+    background-color: #3c0a789e;
     border-radius: 10px;
-    height: auto ;
+    height: auto;
     margin: 0 10px;
     padding: 2%;
 }
@@ -229,6 +275,58 @@ a{
     text-decoration: none;
 }
 
+@media only screen and (min-width: 1024px) {
+
+    .juegos-mas-jugados{
+        width: 50%;
+    }
+
+    .titulo-juego-mas-jugado{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .mas-jugados {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+    
+    .imagen-mas-jugados img {
+        box-shadow: 8px 8px 10px #7236bd;
+    }    
+
+    .texto-mas-jugados{
+        display: grid;
+        grid-template-rows: 2fr 1fr;
+        height: 50%;
+        width: 30%;
+        align-items: center;
+        margin: 0 0 0 20px;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .div-boton-jugar a h2{
+        font-size: 1.5rem
+    }
+    
+    .div-boton-jugar{
+        width: 50%;
+    }
+
+    .div-boton-jugar{
+        width: 80%;
+        height: auto;
+    }
+    
+    .car-juegos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
 
 /* parte de juego ------------------------------------------------------------------------------------------- */
 
@@ -243,16 +341,17 @@ a{
     grid-template-rows: 95% 5%;
     justify-items: center;
     align-items: center;
-    width: 70%;
+    width: 90%;
     background-color: #25064B;
     height: 90%;
     border-radius: 50px;
     margin-top: 3%;
+    padding:10px;
 }
 
 .juego img{
     width: 95%;
-    object-fit: none;
+    margin: 10px;
 }
 
 .juego h4{
@@ -264,12 +363,12 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 80%;
+    width: 90%;
 }
 
 .general{
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 40% 60%;
     grid-gap: 10px;
     margin: 4% 0px;
 }
@@ -282,9 +381,14 @@ a{
 .titulo-ayuda{
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     background-color: #3B0A78;
     padding: 6% 3%;
     border-radius: 10px 10px 0px 0px;
+}
+
+.titulo-ayuda h2{
+    padding: 0px 10px;
 }
 
 .texto-ayuda{
@@ -307,13 +411,20 @@ a{
 }
 
 .calificar{
-    display: flex;
-    justify-content: space-evenly;
-    width: 20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    padding: 0px 10px;
+    width: 40%;
+    justify-items: center;
 }
 
 .dislike, .like{
     cursor: pointer;
+}
+
+.dislike{
+    transform: rotate(90deg);
 }
 
 .compartir{
@@ -321,13 +432,17 @@ a{
     background-color: #660561;
     justify-content: center;
     align-items: center;
-    width: 25%;
+    width: 49%;
     height: 66%;
     padding: 0px 2%;
     margin: 2%;
     border-radius: 50px;
     box-shadow: 2px 3px #540351;
     cursor: pointer;
+}
+
+.compartir h3, img{
+    margin: 0 4%;
 }
 
 .descripcion{
@@ -349,11 +464,12 @@ a{
 
 .imagenes{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr ;
     justify-items: center;
     align-items: center;
     width: 100%;
-    height: 150px;
+    height: 300px;
     background-color: #25064B;    
     border-radius: 20px;
 }
@@ -373,17 +489,25 @@ a{
 
 .com-head{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     border-radius: 10px 10px 0px 0px;
-    height: 75px;
+    height: auto;
     background-color: #3B0A78;
+    flex-direction: column;
+    align-items: center;
+    padding: 3%;
 }
 
 .com-head .com-inp{
     display: flex;
-    /* dejar asi hasta acomodar el inmput */
-    width: 60%;
+    width: 100%;
+}
+
+.com-text{
+    display: grid;
+    grid-template-columns: 20% 70%;
+    grid-gap: 15px;
+    align-items: center;
+    padding: 15px;
 }
 
 .com-body{
@@ -393,12 +517,11 @@ a{
 
 .com-usu{
     display: grid;
-    grid-template-columns: 6% 94%;
+    grid-template-columns: 10% 90%;
     justify-items: start;
     align-items: center;
-    background-color:#5910B7 ;
+    background-color: #5910B7;
     padding: 10px;
-    
 }
 
 .com-usu:nth-child(2n){
@@ -421,6 +544,8 @@ a{
 }
 
 .btn-enviar{
+    display: flex;
+    justify-content: center;
     width: 20%;
     height: 66%;
     background-color: #C50766;
@@ -428,13 +553,96 @@ a{
     padding: 10px 10px 15px 10px;
     border-radius: 50px;
     cursor: pointer;
+    margin-left: 4%;
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .general{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .juego{
+        width: 70%;
+    }
+
+    .secciones{
+       width: 80%;
+    }
+
+    .compartir{
+        width: 25%;
+    }
+
+    .calificar{
+        display: flex;
+        justify-content: space-evenly;
+        width: 25%;
+    }
+
+    .imagenes{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr;
+        height: 150px;
+    }
+
+    .imagen{
+        width: 87%;
+        height: 80%;
+        margin: 10px;
+        background-color: rgb(204, 230, 255);
+        border-radius: 10px;
+    }
+
+    .com-head{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.5%;
+    }
+
+    .com-head .com-inp{
+        width: 70%;
+    }
+
+    .com-usu{
+        display: grid;
+        grid-template-columns: 6% 94%;
+    }
+
+}
+
+/* input ---------------------------------------------------------------------------------------------------------*/
+
+.input-form,.inp-comentario{
+    border-radius: 25px;
+    padding: 0px 0px 0px 20px;
+    grid-gap: 15px;
+}
+
+.inp-comentario{
+    width: 100%;
+}
+
+.input-form{
+    height: 45px;
+    width: 80%; 
+}
+
+@media only screen and (min-width: 1024px) {
+    
+    .inp-comentario{
+        width: 100%;
+    }
+
 }
 
 /* inicio sesion ------------------------------------------------------------------------ */
 
 .formulario{
-    width: 40%;
-    height: 80%;
+    width: 75%;
     background-color: #4F0EA2;
     border-radius: 30px;
 }
@@ -454,31 +662,39 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 20px;
 }
 
 .form-up{
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 15px;
+    grid-template-rows: 2fr 1fr;
+    grid-gap: 20px;
+    width: 90%;
     justify-items: center;
 }
 
 .form-inp{
     display: grid;
     align-items: center;
-    grid-gap: 15px;
+    justify-items: center;
+    grid-gap: 25px;
+    width: 100%;
 }
 
 .btn-entrar{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 25px;
+    border-radius: 40px;
     background-color: #25064B;
-    box-shadow: 4px 5px #3B0A78;
-    height: 25px;
-    width: 50%;
+    box-shadow: 4px 5px #3b0a78;
+    height: 40px;
+    width: 60%;
     padding: 10px 20px 15px 20px;
+}
+
+.btn-entrar a h2{
+    font-size: 2rm;
 }
 
 .register{
@@ -492,7 +708,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .link-regis p {
@@ -540,6 +756,19 @@ a{
     height: 50px;
 }
 
+@media only screen and (min-width: 1024px) {
+    
+    .formulario{
+        width: 30%;
+    }
+
+    .btn-entrar{
+        height: 40px;
+        width: 60%;
+    }
+
+}
+
 /* registro --------------------------------------------------------------------- */
 
 .form-inp-regis{
@@ -548,41 +777,45 @@ a{
     justify-items: center;
     grid-gap: 15px;
     height: auto;
-}
-
-.form-inp-regis input{
-    width: 80%;
-
+    margin: 20px 0px;
 }
 
 .form-head-res{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border-radius: 30px 30px 0px 0px;
     height: 60px;
     background-color: #3B0A78;
     margin-bottom: 10px;
+    padding: 5px 20px;
 }
 
-.form-head-res a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.form-head-res h1 {
+    margin-left: 22%;
 }
 
 .form-persona{
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
+    width: 90%;
+}
+
+.form-persona .input-form{
+    width: 75%;
 }
 
 .form-naci{
+    width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
 }
 
+.form-naci .input-form{
+    width: 65%;
+}
 
 .btn-entrar-res{
     display: flex;
@@ -591,11 +824,85 @@ a{
     border-radius: 25px;
     background-color: #25064B;
     box-shadow: 4px 5px #3b0a78;
-    height: 25px;
-    width: 50%;
+    height: 40px;
+    width: 70%;
     padding: 10px 20px 15px 20px;
 }
 
-.dislike{
-    transform: rotate(90deg);
+@media only screen and (min-width: 1024px) {
+    
+    .btn-entrar-res{
+        height: 25px;
+        width: 50%;
+    }
+
+}
+
+/* menus */
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-h-oculto{
+    display: none;
+}
+
+.menu-u-oculto{
+    display: none;
+}
+
+.menu-hamburguesa{
+    background-color: #660561;
+    height: 400px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: start;
+    position: absolute;
+    left: 0;
+}
+
+.cont{
+    border-top: 5px solid;
+    text-align: start;
+    margin: 0 7%;
+}
+
+.cont h3{
+    margin-top: 9.5%;
+}
+
+.menu-usuario{
+    background-color: #660561;
+    height: 400px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: end;
+    position: absolute;
+    right: 0;
+}
+
+/* compartir box */
+
+.oculto-box{
+    display: none;
+}
+
+.compartir-box{
+    height: 300px;
+    width: 500px;
+    position: absolute;
+    align-content: center;
+    display: flex;
+    background-color: #3B0A78;
+    box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.394);
+}
+
+.btn-cancelar, .btn-hecho{
+    cursor: pointer;
 }

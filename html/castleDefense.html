@@ -9,19 +9,55 @@
 </head>
 
 <body>
+    <div class="menu">
+        <div class="menu-h-oculto">
+            <div class="cont">
+                <h3>juegos populares</h3>
+            </div>
+            <div class="cont">
+                <h3>juegos de terror</h3>
+            </div>
+            <div class="cont">
+                <h3>juegos de disparos</h3>
+            </div>
+            <div class="cont">
+                <h3>juegos en oferta</h3>
+            </div>
+            <div class="cont">
+                <h3>juegos gratis</h3>
+            </div>
+        </div>
+        <div class="menu-u-oculto">
+            <div class="cont">
+                <h3>tu perfil</h3>
+            </div>
+            <div class="cont">
+                <h3>ajustes</h3>
+            </div>
+            <div class="cont">
+                <h3>tus compras</h3>
+            </div>
+            <div class="cont">
+                <h3>juegos favoritos</h3>
+            </div>
+            <div class="cont">
+                <a href="html/inicioSesion.html">
+                    <h3>cerrar sesión</h3>
+                </a>
+            </div>
+        </div>
+    </div>
     <header class="encabezado">
         <div class="btn-ham"></div>
-        <div class="logo">
-            <a href="../index.html">
-                <img src="../images/logo.png" alt="logo de castle games">
-            </a>
+        <a href="../index.html">
+            <img class="logo" src="../images/logo.png" alt="logo de castle games">
+        </a>
         </div>
-        <div>
+        <div class="head-derecha">
             <div class="carrito">
                 <img src="../images/carrito.png" alt="">
             </div>
             <div class="perfil">
-                <a href="inicioSesion.html">xxxxxx</a>
             </div>
         </div>
     </header>
@@ -59,6 +95,30 @@
                             <h3>Compartir</h3>
                         </div>
                     </div>
+                    <div class="oculto-box">
+                        <div class="box-head">
+                            <h1>Compartir</h1>
+                        </div>
+                        <div class="contenido">
+                            <div class="redes">
+                                <img src="../images/instagram.png" alt="">
+                                <img src="../images/facebook.png" alt="">
+                                <img src="../images/twitter.png" alt="">
+                                <img src="../images/gmail.png" alt="">
+                            </div>
+                            <div class="link">
+
+                            </div>
+                            <div class="botones">
+                                <div class="btn-cancelar">
+                                    <h2>Cancelar</h2>
+                                </div>
+                                <div class="btn-hecho">
+                                    <h2>Hecho</h2>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
                     <div class="descripcion">
                         <div class="titulo-descripcion">
                             <h2>Descripción</h2>
@@ -83,10 +143,12 @@
             </div>
             <div class="comentarios">
                 <div class="com-head">
-                    <img src="../images/comentario.png" alt="" class="comentario">
-                    <h2>comentarios</h2>
+                    <div class="com-text">
+                        <img src="../images/comentario.png" alt="" class="comentario">
+                        <h2>comentarios</h2> 
+                    </div>
                     <div class="com-inp">
-                        <input class="comentario" type="text" placeholder="deja un comentario">
+                        <input class="inp-comentario" type="text" placeholder="deja un comentario">
                         <div class="btn-enviar">
                             <h2>enviar</h2>
                         </div>
@@ -228,11 +290,12 @@
                 ¡Explora nuestro catalogo y diviértete al máximo!<br>
             </h3>
         </div>
-        <div>
-            <img src="../images/logo.png" alt="logo de castle games">
-        </div>
+            <a href="../index.html">
+                <img class="logo" src="../images/logo.png" alt="logo de castle games">
+            </a>
     </footer>
 </body>
-<script src="../js/script.js"></script>
-
+<script src="../js/compartir.js"></script>
+<script src="../js/menu-ham.js"></script>
+<script src="../js/menu-usr.js"></script>
 </html>
