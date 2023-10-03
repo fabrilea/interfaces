@@ -334,6 +334,7 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .juego{
@@ -441,8 +442,101 @@ a{
     cursor: pointer;
 }
 
-.compartir h3, img{
+.compartir h3,.compartir img{
     margin: 0 4%;
+}
+
+.oculto-box{
+    display: none;
+}
+
+.compartir-box{
+    /* height: 350px; */
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    border-radius: 10px;
+    background-color: #4F0EA2;
+    box-shadow: 0 0 0 150vh rgb(0 0 0 / 50%);
+  
+}
+
+.box-head{
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #25064B;
+    padding: 10px 0px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.box-body{
+    padding: 5% 3%;
+}
+
+.redes{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50px;
+    width: 80%;
+    margin-left: 40px;
+}
+
+.redes img{
+    height: 50px;
+    width: 50px;
+}
+
+.link{
+    display: flex;
+    margin: 20px 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.link input{
+    width: 90%;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.copiar{
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    right: 20px;
+    background-color: #25064B;
+    border-radius: 40px;
+}
+
+.comp-botones{
+    display: flex;
+    margin: 10px 0px; 
+}
+
+.btn-cancelar, .btn-hecho{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    border-radius: 30px;
+    padding: 5px 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.btn-hecho{
+    background-color: #3B0A78 ;
+}
+
+.btn-cancelar{
+    background-color: #C50766;
 }
 
 .descripcion{
@@ -885,24 +979,4 @@ a{
     align-content: end;
     position: absolute;
     right: 0;
-}
-
-/* compartir box */
-
-.oculto-box{
-    display: none;
-}
-
-.compartir-box{
-    height: 300px;
-    width: 500px;
-    position: absolute;
-    align-content: center;
-    display: flex;
-    background-color: #3B0A78;
-    box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.394);
-}
-
-.btn-cancelar, .btn-hecho{
-    cursor: pointer;
 }
