@@ -32,6 +32,10 @@ h4.fino{
     font-weight: lighter;
 }
 
+.oculto{
+    display: none;
+}
+
 /* footer y header ----------------------------------------------------------------------- */
 
 header{
@@ -61,12 +65,110 @@ header{
     cursor: pointer;
 }
 
-.perfil{
-    height: 50px;
-    width: 50px;
+.perfil,.perfil-grande{
     background-color: white;
     border-radius: 25px;
     cursor: pointer;
+    transition: .4s ease-in-out all;
+}
+
+.perfil{
+    height: 50px;
+    width: 50px;
+}
+
+.perfil-grande{
+    transform: scale(1.3);
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-usuario , .menu-usuario2{
+    background-color: #660561;
+    height: auto;
+    width: 275px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: end;
+    position: absolute;
+}
+
+.menu-usuario{
+    right: 0; 
+}
+
+.menu-usuario2{
+    left: 0;
+}
+
+.cont {
+    text-transform: uppercase;
+	transition: .3s ease all;
+	position: relative;
+	overflow: hidden;
+}
+
+.cont span, .menu-usuario2 .cont span  {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 60px;
+    padding: 7% 5%;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+	position: relative;
+	z-index: 2;
+	transition: .3s ease all;
+}
+
+.cont span{
+    grid-template-columns: 30% 70%;
+    grid-gap: 10px;
+}
+
+.menu-usuario2 .cont span {
+    grid-template-columns: 1fr;
+}
+
+.cont::after {
+	content: "";
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: calc(-100% - 100px);
+	border-bottom: 100px solid #970891;
+	border-right: 100px solid transparent;
+	transition: .4s ease-in-out all;
+}
+
+.cont:hover::after {
+	left: 0;
+}
+
+.cont img{
+    height: 85%;
+    width: 85%;
+}
+
+.cont .img-cerrar{
+    height: 90%;
+    width: 70%;
+}
+
+.cont .img-usuario, .cont .img-ajustes{
+    height: 90%;
+    width: 75%;
+}
+
+.cont h2{
+    width: auto;
+    padding: 0px 10px;
+    text-align: center;
 }
 
 footer{
@@ -106,14 +208,6 @@ footer{
 
 footer img{
     margin-top: 7%;
-}
-
-@media only screen and (min-width: 1024px) {
-   
-    header{
-        padding: 1.5%;
-    }
-
 }
 
 /* index -------------------------------------------------------------------------------- */
@@ -187,7 +281,8 @@ body{
 
 .titulo-mas-jugado h1 p,.titulo-mas-jugado h4 p{
     display: flex;
-    justify-content: center;}
+    justify-content: center;
+}
 
 .div-boton-jugar{
     display: flex;
@@ -200,7 +295,37 @@ body{
     cursor: pointer;
     justify-content: center;
     align-items: center;
+    text-transform: uppercase;
+	transition: .3s ease all;
+	position: relative;
+	overflow: hidden;
 }
+
+.div-boton-jugar span {
+	position: relative;
+	z-index: 2;
+	transition: .3s ease all;
+}
+
+.div-boton-jugar::after {
+	content: "";
+	width: 1px;
+	height: 1px;
+	background: none;
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	transition: .6s ease-in-out all;
+	border-radius: 100px;
+	transform-origin: center;
+}
+
+.div-boton-jugar:hover::after {
+	transform: scale(150);
+	background: #F60E82;
+}
+
 
 .div-boton-jugar a h2{
     font-size: 2.5rem
@@ -217,7 +342,6 @@ body{
 .carruseles, .carrusel{
     scroll-behavior: smooth;
     overflow: visible;
-
 }
 
 .contenido{
@@ -230,28 +354,32 @@ body{
     grid-template-columns: 1fr 90% 1fr;
     justify-content: center;
     align-items: center;
+    justify-items: center;
+    transition: all 0.4s ease;
 }
 
-.car-juegos{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 0fr 0fr;
-    grid-gap: 1%;
+.contenedor-car{
     background-color: #3c0a789e;
     border-radius: 10px;
     height: auto;
     margin: 0 10px;
     padding: 2%;
+  
+}
+
+.contenedor-car .car-juegos{
+    display: flex;
+    flex-flow: row nowrap;
+    transition: all 0.5s ease;
+    overflow: hidden;
 }
 
 .elemento{
     border-radius: 10px;
     height: 95%;
-    width: 95%;
-    cursor: pointer;
-}
-
-.grupo-2{
-    display: none;
+    width: 30%;
+    margin: 0px 1%;
+	transition: .3s ease all;
 }
 
 .flecha img{
@@ -264,7 +392,6 @@ body{
 }
 
 
-
 .logo{
     cursor: pointer;
     width: fit-content;
@@ -273,59 +400,6 @@ body{
 
 a{
     text-decoration: none;
-}
-
-@media only screen and (min-width: 1024px) {
-
-    .juegos-mas-jugados{
-        width: 50%;
-    }
-
-    .titulo-juego-mas-jugado{
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    .mas-jugados {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-    }
-    
-    .imagen-mas-jugados img {
-        box-shadow: 8px 8px 10px #7236bd;
-    }    
-
-    .texto-mas-jugados{
-        display: grid;
-        grid-template-rows: 2fr 1fr;
-        height: 50%;
-        width: 30%;
-        align-items: center;
-        margin: 0 0 0 20px;
-        justify-items: center;
-        text-align: center;
-    }
-
-    .div-boton-jugar a h2{
-        font-size: 1.5rem
-    }
-    
-    .div-boton-jugar{
-        width: 50%;
-    }
-
-    .div-boton-jugar{
-        width: 80%;
-        height: auto;
-    }
-    
-    .car-juegos{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-    }
 }
 
 /* parte de juego ------------------------------------------------------------------------------------------- */
@@ -424,10 +498,6 @@ a{
     cursor: pointer;
 }
 
-.dislike{
-    transform: rotate(90deg);
-}
-
 .compartir{
     display: flex;
     background-color: #660561;
@@ -446,12 +516,7 @@ a{
     margin: 0 4%;
 }
 
-.oculto-box{
-    display: none;
-}
-
 .compartir-box{
-    /* height: 350px; */
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -460,7 +525,7 @@ a{
     border-radius: 10px;
     background-color: #4F0EA2;
     box-shadow: 0 0 0 150vh rgb(0 0 0 / 50%);
-  
+    top: 32%;
 }
 
 .box-head{
@@ -506,6 +571,9 @@ a{
 }
 
 .copiar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 60px;
     width: 60px;
     position: absolute;
@@ -650,63 +718,6 @@ a{
     margin-left: 4%;
 }
 
-@media only screen and (min-width: 1024px) {
-
-    .general{
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-    }
-
-    .juego{
-        width: 70%;
-    }
-
-    .secciones{
-       width: 80%;
-    }
-
-    .compartir{
-        width: 25%;
-    }
-
-    .calificar{
-        display: flex;
-        justify-content: space-evenly;
-        width: 25%;
-    }
-
-    .imagenes{
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 1fr;
-        height: 150px;
-    }
-
-    .imagen{
-        width: 87%;
-        height: 80%;
-        margin: 10px;
-        background-color: rgb(204, 230, 255);
-        border-radius: 10px;
-    }
-
-    .com-head{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1.5%;
-    }
-
-    .com-head .com-inp{
-        width: 70%;
-    }
-
-    .com-usu{
-        display: grid;
-        grid-template-columns: 6% 94%;
-    }
-
-}
 
 /* input ---------------------------------------------------------------------------------------------------------*/
 
@@ -723,14 +734,6 @@ a{
 .input-form{
     height: 45px;
     width: 80%; 
-}
-
-@media only screen and (min-width: 1024px) {
-    
-    .inp-comentario{
-        width: 100%;
-    }
-
 }
 
 /* inicio sesion ------------------------------------------------------------------------ */
@@ -850,19 +853,6 @@ a{
     height: 50px;
 }
 
-@media only screen and (min-width: 1024px) {
-    
-    .formulario{
-        width: 30%;
-    }
-
-    .btn-entrar{
-        height: 40px;
-        width: 60%;
-    }
-
-}
-
 /* registro --------------------------------------------------------------------- */
 
 .form-inp-regis{
@@ -875,18 +865,14 @@ a{
 }
 
 .form-head-res{
-    display: flex;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     border-radius: 30px 30px 0px 0px;
     height: 60px;
     background-color: #3B0A78;
     margin-bottom: 10px;
     padding: 5px 20px;
-}
-
-.form-head-res h1 {
-    margin-left: 22%;
 }
 
 .form-persona{
@@ -924,7 +910,129 @@ a{
 }
 
 @media only screen and (min-width: 1024px) {
+  
+    header{
+        padding: 1.5%;
+    }
+
+
+    .juegos-mas-jugados{
+        width: 50%;
+    }
+
+    .titulo-juego-mas-jugado{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .mas-jugados {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
     
+    .imagen-mas-jugados img {
+        box-shadow: 8px 8px 10px #7236bd;
+    }    
+
+    .texto-mas-jugados{
+        display: grid;
+        grid-template-rows: 2fr 1fr;
+        height: 50%;
+        width: 30%;
+        align-items: center;
+        margin: 0 0 0 20px;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .div-boton-jugar a h2{
+        font-size: 1.5rem
+    }
+    
+    .div-boton-jugar{
+        width: 50%;
+    }
+
+    .div-boton-jugar{
+        width: 80%;
+        height: auto;
+    }
+    
+    .elemento{
+        min-width: 18%;
+    }
+
+    .general{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .juego{
+        width: 70%;
+    }
+
+    .secciones{
+       width: 80%;
+    }
+
+    .compartir{
+        width: 25%;
+    }
+
+    .calificar{
+        display: flex;
+        justify-content: space-evenly;
+        width: 25%;
+    }
+
+    .imagenes{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr;
+        height: 150px;
+    }
+
+    .imagen{
+        width: 87%;
+        height: 80%;
+        margin: 10px;
+        background-color: rgb(204, 230, 255);
+        border-radius: 10px;
+    }
+
+    .com-head{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.5%;
+    }
+
+    .com-head .com-inp{
+        width: 70%;
+    }
+
+    .com-usu{
+        display: grid;
+        grid-template-columns: 6% 94%;
+    }
+
+
+    .inp-comentario{
+        width: 100%;
+    }
+
+
+    .formulario{
+        width: 30%;
+    }
+
+    .btn-entrar{
+        height: 40px;
+        width: 60%;
+    }
+
     .btn-entrar-res{
         height: 25px;
         width: 50%;
@@ -932,51 +1040,14 @@ a{
 
 }
 
-/* menus */
-
-.menu{
-    display: flex;
-    justify-content: space-between;
+.indicadores button {
+	background: #fff;
+	height: 3px;
+	width: 10px;
+	cursor: pointer;
+	border: none;
+	margin-right: 2px;
 }
-
-.menu-h-oculto{
-    display: none;
-}
-
-.menu-u-oculto{
-    display: none;
-}
-
-.menu-hamburguesa{
-    background-color: #660561;
-    height: 400px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-content: start;
-    position: absolute;
-    left: 0;
-}
-
-.cont{
-    border-top: 5px solid;
-    text-align: start;
-    margin: 0 7%;
-}
-
-.cont h3{
-    margin-top: 9.5%;
-}
-
-.menu-usuario{
-    background-color: #660561;
-    height: 400px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-content: end;
-    position: absolute;
-    right: 0;
+.indicadores button.activo {
+	background: red;
 }

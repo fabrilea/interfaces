@@ -11,54 +11,79 @@
 <body>
     <header class="encabezado">
         <div class="btn-ham"></div>
-        <a href="../index.html">
-            <img class="logo" src="../images/logo.png" alt="logo de castle games">
-        </a>
+        <div class="logo">
+            <a href="/index.html">
+                <img src="../images/logo.png" alt="logo de castle games">
+            </a>
         </div>
         <div class="head-derecha">
             <div class="carrito">
                 <img src="../images/carrito.png" alt="">
             </div>
-            <div class="perfil">
-            </div>
+            <img src="../imagenes/ferafe2.PNG" alt="" class="perfil">
         </div>
     </header>
     <div class="menu">
-        <div class="menu-h-oculto">
+        <div class="oculto" id="menu-ham">
             <div class="cont">
-                <h3>juegos populares</h3>
+                <span>
+                    <h2>juegos populares</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>juegos de terror</h3>
+                <span>
+                    <h2>juegos de terror</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>juegos de disparos</h3>
+                <span>
+                    <h2>juegos de disparos</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>juegos en oferta</h3>
+                <span>
+                    <h2>juegos en oferta</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>juegos gratis</h3>
+                <span>
+                    <h2>juegos gratis</h2>
+                </span>
             </div>
         </div>
-        <div class="menu-u-oculto">
+        <div class="oculto" id="menu-usu">
             <div class="cont">
-                <h3>tu perfil</h3>
+                <span>
+                    <img src="../images/vector.png" alt="" class="img-usuario">
+                    <h2>tu perfil</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>ajustes</h3>
+                <span>
+                    <img src="../images/ajuste.png" alt="" class="img-ajustes">
+                    <h2>ajustes</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>tus compras</h3>
+                <span>
+                    <img src="../images/tarjeta.png" alt="" class="img-tarjeta">
+                    <h2>tus compras</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>juegos favoritos</h3>
+                <span>
+                    <img src="../images/favorito.png" alt="" class="img-fav">
+                    <h2>juegos favoritos</h2>
+                </span>
             </div>
-            <div class="cont">
-                <a href="html/inicioSesion.html">
-                    <h3>cerrar sesión</h3>
-                </a>
-            </div>
+            <a href="html/inicioSesion.html">
+                <div class="cont">
+                    <span>
+                        <img src="../images/cerrar.png" alt="" class="img-cerrar">
+                        <h2>cerrar sesión</h2>
+                    </span>
+                </div>
+            </a>
         </div>
     </div>
     <div class="main">
@@ -66,7 +91,7 @@
             <img src="../otros/tablero.png" alt="">
             <h4 class="fino">home >> 2 jugadores >> castle defense</h4>
         </div>
-        <div class="oculto-box">
+        <div class="oculto" id="comp-box">
             <div class="box-head">
                 <h1>Compartir</h1>
             </div>
@@ -79,7 +104,9 @@
                 </div>
                 <div class="link">
                     <input type="text">
-                    <div class="copiar"></div>
+                    <div class="copiar">
+                        <img src="../images/copiar.png" alt="" class="comentario">
+                    </div>
                 </div>
                 <div class="comp-botones">
                     <div class="btn-cancelar">
@@ -112,7 +139,7 @@
                                 <img src="../images/like.png" alt="" class="like">
                             </div>
                             <div class="dislike">
-                                <img src="../images/like.png" alt="" class="dislike">
+                                <img src="../images/dislike.png" alt="" class="dislike">
                             </div>
                         </div>
                         <div class="compartir">
@@ -296,7 +323,5 @@
             </a>
     </footer>
 </body>
-<script src="../js/compartir.js"></script>
-<script src="../js/menu-ham.js"></script>
-<script src="../js/menu-usr.js"></script>
+<script src="../js/script.js"></script>
 </html>

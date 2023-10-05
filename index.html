@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>home</title>
 </head>
+
 <body>
     <header class="encabezado">
         <div class="btn-ham"></div>
@@ -19,46 +20,70 @@
             <div class="carrito">
                 <img src="images/carrito.png" alt="">
             </div>
-            <div class="perfil">
-            </div>
+            <img src="imagenes/ferafe2.PNG" alt="" class="perfil">
         </div>
     </header>
     <div class="menu">
-        <div class="menu-h-oculto">
+        <div class="oculto" id="menu-ham">
             <div class="cont">
-                <h3>juegos populares</h3>
+                <span>
+                    <h2>juegos populares</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>juegos de terror</h3>
+                <span>
+                    <h2>juegos de terror</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>juegos de disparos</h3>
+                <span>
+                    <h2>juegos de disparos</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>juegos en oferta</h3>
+                <span>
+                    <h2>juegos en oferta</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>juegos gratis</h3>
+                <span>
+                    <h2>juegos gratis</h2>
+                </span>
             </div>
         </div>
-        <div class="menu-u-oculto">
+        <div class="oculto" id="menu-usu">
             <div class="cont">
-                <h3>tu perfil</h3>
+                <span>
+                    <img src="../images/vector.png" alt="" class="img-usuario">
+                    <h2>tu perfil</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>ajustes</h3>
+                <span>
+                    <img src="../images/ajuste.png" alt="" class="img-ajustes">
+                    <h2>ajustes</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>tus compras</h3>
+                <span>
+                    <img src="../images/tarjeta.png" alt="" class="img-tarjeta">
+                    <h2>tus compras</h2>
+                </span>
             </div>
             <div class="cont">
-                <h3>juegos favoritos</h3>
+                <span>
+                    <img src="../images/favorito.png" alt="" class="img-fav">
+                    <h2>juegos favoritos</h2>
+                </span>
             </div>
-            <div class="cont">
-                <a href="html/inicioSesion.html">
-                    <h3>cerrar sesión</h3>
-                </a>
-            </div>
+            <a href="html/inicioSesion.html">
+                <div class="cont">
+                    <span>
+                        <img src="../images/cerrar.png" alt="" class="img-cerrar">
+                        <h2>cerrar sesión</h2>
+                    </span>
+                </div>
+            </a>
         </div>
     </div>
     <div class="home">
@@ -72,15 +97,20 @@
                 </div>
                 <div class="texto-mas-jugados">
                     <div class="titulo-mas-jugado">
-                        <h1><p>Castle Defense:</p></h1>
-                        <h4><p>la defensa del asedio</p></h4>
+                        <h1>
+                            <p>Castle Defense:</p>
+                        </h1>
+                        <h4>
+                            <p>la defensa del asedio</p>
+                        </h4>
                     </div>
-                    
-                        <div class="div-boton-jugar">
+                    <div class="div-boton-jugar">
+                        <span>
                             <a href="html/castleDefense.html">
                                 <h2>Jugar</h2>
                             </a>
-                        </div>
+                        </span>
+                    </div>
                     </a>
                 </div>
             </div>
@@ -92,12 +122,20 @@
                     <div class="flecha">
                         <img src="images/flecha.png" alt="">
                     </div>
-                    <div class="car-juegos">
-                        <img class="elemento" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                    <div class="contenedor-car" >
+                        <div class="car-juegos" id="carrusel">
+                            <img class="elemento" src="images/carrusel/1.png" alt="">
+                            <img class="elemento" src="images/carrusel/2.png" alt="">
+                            <img class="elemento" src="images/carrusel/3.png" alt="">
+                            <img class="elemento" src="images/carrusel/4.png" alt="">
+                            <img class="elemento" src="images/carrusel/5.png" alt="">
+                            <img class="elemento" src="images/carrusel/6.png" alt="">
+                            <img class="elemento" src="images/carrusel/7.png" alt="">
+                            <img class="elemento" src="images/carrusel/8.png" alt="">
+                            <img class="elemento" src="images/carrusel/9.png" alt="">
+                            <img class="elemento" src="images/carrusel/10.png" alt="">
+                        </div>
+                        <div class="indicadores"></div>
                     </div>
                     <div class="flecha-der">
                         <img src="images/flecha.png" alt="">
@@ -107,22 +145,25 @@
             <div class="contenido">
                 <h2>Shooter</h2>
                 <div class="carrusel">
-                    <div class="flecha">
+                    <div class="flecha" id="flecha-izq">
                         <img src="images/flecha.png" alt="">
                     </div>
-                    <div class="car-juegos">
-                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
+                    <div class="contenedor-car" >
+                        <div class="car-juegos" id="carrusel">
+                            <img class="elemento" src="images/carrusel/1.png" alt="">
+                            <img class="elemento" src="images/carrusel/2.png" alt="">
+                            <img class="elemento" src="images/carrusel/3.png" alt="">
+                            <img class="elemento" src="images/carrusel/4.png" alt="">
+                            <img class="elemento" src="images/carrusel/5.png" alt="">
+                            <img class="elemento" src="images/carrusel/6.png" alt="">
+                            <img class="elemento" src="images/carrusel/7.png" alt="">
+                            <img class="elemento" src="images/carrusel/8.png" alt="">
+                            <img class="elemento" src="images/carrusel/9.png" alt="">
+                            <img class="elemento" src="images/carrusel/10.png" alt="">
+                        </div>
+                        <div class="indicadores"></div>
                     </div>
-                    <div class="flecha-der">
+                    <div class="flecha-der" id="flecha-der">
                         <img src="images/flecha.png" alt="">
                     </div>
                 </div>
@@ -133,17 +174,20 @@
                     <div class="flecha">
                         <img src="images/flecha.png" alt="">
                     </div>
-                    <div class="car-juegos">
-                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento activo" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento grupo-2" src="images/carrusel/prueba.png" alt="">
+                    <div class="contenedor-car" >
+                        <div class="car-juegos" id="carrusel">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                        </div>
+                        <div class="indicadores"></div>
                     </div>
                     <div class="flecha-der">
                         <img src="images/flecha.png" alt="">
@@ -156,15 +200,18 @@
                     <div class="flecha">
                         <img src="images/flecha.png" alt="">
                     </div>
-                    <div class="car-juegos">
-                        <img class="elemento" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento" src="images/carrusel/prueba.png" alt="">
-                        <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                    <div class="contenedor-car" >
+                        <div class="car-juegos" id="carrusel">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                            <img class="elemento" src="images/carrusel/prueba.png" alt="">
+                        </div>
+                        <div class="indicadores"></div>
                     </div>
                     <div class="flecha-der">
-                        <img src="images/flecha.png" alt="">
+                        <img src="images/flecha.png" id="flecha-der" alt="">
                     </div>
                 </div>
             </div>
@@ -183,7 +230,5 @@
             </a>
         </footer>
 </body>
-<script src="js/menu-ham.js"></script>
-<script src="js/menu-usr.js"></script>
-<script src="js/carrusel.js"></script>
+<script src="js/script.js"></script>
 </html>
