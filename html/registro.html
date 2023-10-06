@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
 </head>
 
 <body>
     <div class="home">
         <div>
-            <img src="../images/logo.png" alt="logo de castle games">
+            <img src="../images/logo.png" class="logo-inicio" alt="logo de castle games">
         </div>
         <div class="formulario">
             <div class="form-head-res">
@@ -23,23 +23,25 @@
             <div class="form-body">
                 <form class="form-inp-regis">
                     <div class="form-persona">
-                        <input class="input-form" type="text" placeholder="nombre">
-                        <input class="input-form" type="text" placeholder="apellido">
+                        <input class="input-form" type="text" placeholder="nombre" required>
+                        <input class="input-form" type="text" placeholder="apellido" required>
                     </div>
-                    <input class="input-form" type="text" placeholder="nickname">
+                    <input class="input-form" type="text" placeholder="nickname" required>
                     <div class="form-naci">
-                        <input class="input-form" type="text" placeholder="dia">
-                        <input class="input-form" type="text" placeholder="mes">
-                        <input class="input-form" type="text" placeholder="año">
+                        <input class="input-form" type="text" placeholder="dia" required>
+                        <input class="input-form" type="text" placeholder="mes" required>
+                        <input class="input-form" type="text" placeholder="año" required>
                     </div>
-                    <input class="input-form" type="text" placeholder="email">
-                    <input class="input-form" type="text" placeholder="contraseña">
-                    <input class="input-form" type="text" placeholder="contraseña">
+                    <input class="input-form" type="text" placeholder="email" required>
+                    <input class="input-form" type="text" placeholder="contraseña" required>
+                    <input class="input-form" type="text" placeholder="contraseña" required>
                 </form>
                 <div class="btn-entrar-res">
-                    <a href="inicioSesion.html">
-                        <h2>registrar</h2>
-                    </a>
+                    <span>
+                        <a href="inicioSesion.html">
+                            <h2>registrar</h2>
+                        </a>
+                    </span>
                 </div>
             </div>
         </div>

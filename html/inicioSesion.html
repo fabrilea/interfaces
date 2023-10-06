@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
 </head>
 
 <body>
     <div class="home">
         <div>
-            <img src="../images/logo.png" alt="logo de castle games">
+            <img src="../images/logo.png" class="logo-inicio" alt="logo de castle games">
         </div>
         <div class="formulario">
             <div class="form-head">
@@ -20,13 +20,15 @@
             <div class="form-body">
                 <div class="form-up">
                     <form class="form-inp">
-                        <input class="input-form" type="text" placeholder="nombre">
-                        <input class="input-form" type="text" placeholder="contraseña">
+                        <input class="input-form" type="text" placeholder="nombre" required>
+                        <input class="input-form" type="text" placeholder="contraseña" required>
                     </form>
                     <div class="btn-entrar">
-                        <a href="../index.html">
-                            <h2>entrar</h2>
-                        </a>
+                        <span>
+                            <a href="../loading.html">
+                                <h2>entrar</h2>
+                            </a>
+                        </span>
                     </div>
                 </div>
                 <div class="form-down">
@@ -44,8 +46,14 @@
                         </div>
                     </div>
                     <div class="btn-opcionales">
-                        <div class="google"></div>
-                        <div class="facebook"></div>
+                        <div class="google">
+                            <img src="../images/gmail.png" alt="">
+                            <h3>Continuar con Gmail</h3>
+                        </div>
+                        <div class="facebook">
+                            <img src="../images/facebook.png" alt="">
+                            <h3>Continuar con Facebook</h3>
+                        </div>
                     </div>
                 </div>
             </div>
