@@ -11,15 +11,18 @@ let cancelar = document.querySelector(".btn-cancelar");
 let hecho = document.querySelector(".btn-hecho");
 let compartir_box = document.querySelector("#comp-box");
 
+
 cambiarMenuUser.addEventListener("click", () => {
 
     cambiarMenuUser.classList.toggle("grande");
     userMenuElement.classList.toggle("menu-usuario");
+    hamMenuElement.classList.remove("menu-usuario2");
 });
 
 cambiarMenuElement.addEventListener("click", () => {
     cambiarMenuElement.classList.toggle("grande");
     hamMenuElement.classList.toggle("menu-usuario2");
+    userMenuElement.classList.remove("menu-usuario");
 });
 
 compartir.addEventListener("click", () => {
