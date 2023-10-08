@@ -541,6 +541,11 @@ body {
     
 }
 
+.copiar img{
+    height: auto;
+    width: auto;
+}
+
 /* .card-pago{
     display: flex;
     border-radius: 10px;
