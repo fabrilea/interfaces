@@ -30,6 +30,9 @@ let isMouseDown = false;
 
 function crearJuego() {
     //Creo el juego inicializando cada método necesario (tablero, juego, fichas, etc...)
+    if(juego.gameOver){
+        return;
+    }
     let cellSize = 60;
     let valor = tipoJuego.value;
     let rows = parseInt(valor) + 2;
@@ -141,7 +144,9 @@ function onMouseUp(e) {
         let jugador = juego.getCurrentPlayer();
 
         jugador.dropFicha(col, ficha, tablero, juego);
-        juego.winGame();
+        juego.checkWinner()
+
+        console.log(juego.gameOver)
         //console.log(tablero.matrix);
     } else if(ficha != null && col === null) {
         ficha.posOriginal();

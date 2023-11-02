@@ -97,44 +97,6 @@ class Tablero {
     }
 
 
-    cellsConnect(connect) {
-        let connectedCells = this.connectHorizontal(connect);
-        // if(connectedCells.length === 0){
-        //    connectedCells = this.connectVertical(connect);
-        // }
-        // if(connectedCells.length === 0) {
-        //    connectedCells = this.connectDiagonal(connect);
-        // }
-        return connectedCells;
-    }
-
-    connectHorizontal(connect) {
-        const connectedCells = [];
-        for (let row = 0; row < this.rows; row++) {
-            for (let col = 0; col <= this.cols - connect; col++) {
-                if (this.matrix[row][col] !== null) {
-                    let firstCircle = this.matrix[row][col];
-                    const inLineCells = [firstCircle];
-                    for (let i = 1; i < connect; i++) {
-                        if (this.matrix[row][col + i] !== null) {
-                            if (firstCircle.compareTo(this.matrix[row][col + i])) {
-                                inLineCells.push(this.matrix[row][col + i]);
-                            } else {
-                                break;
-                            }
-                        }
-                    }
-                    if (inLineCells.length === connect) {
-                        connectedCells.push(...inLineCells);
-                    }
-                }
-            }
-        }
-        return connectedCells;
-    }
-
-
-
     getCol(circulo) {
         let col = 0;
         let cond = false;
@@ -200,7 +162,6 @@ class Tablero {
     setStartY(value) {
         this.startY = value;
     }
-
 }
 
 
