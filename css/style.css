@@ -1207,7 +1207,7 @@ a {
     }
 
     header {
-        height: 100px;
+        height: 60px;
         width: auto;
         display: flex;
         justify-content: space-between;
@@ -1470,7 +1470,8 @@ a {
 .barra-izquierda{
     height: 100px;
     width: 100px;
-    background-color: #111;
+    background-color: #58218b;
+    border-radius: 20px;
     position: absolute;
     margin-left: 2.6%;
 }
@@ -1478,9 +1479,10 @@ a {
 .barra-derecha{
     height: 100px;
     width: 100px;
-    background-color: #111;
+    background-color: #58218b;
+    border-radius: 20px;
     position: absolute;
-    margin-left: 34%;
+    margin-left: 55.25%;
 }
 
 .elementos{

@@ -18,7 +18,7 @@ let fichasA = [];
 let fichasB = [];
 
 //Creo mi juego, tablero ,jugadores y fichas tomando lo que me pase el usuario desde el DOM
-let tablero = new Tablero(6, 7, 60, 190, 30);//tablero por default
+let tablero = new Tablero(6, 7, 60, 390, 20);//tablero por default
 let CANT_FIG = tablero.getSize();
 tablero.draw(ctx);
 
@@ -59,7 +59,9 @@ formulario.addEventListener('submit', function (event) {
 
     jugador1.setNombre(name1);
     jugador2.setNombre(name2);
-    
+
+    play.innerHTML = "Reiniciar";
+
     crearJuego();
 
 });
@@ -98,19 +100,20 @@ function getRandomNumber(min, max) {
 }
 
 function addCircle(color) {
-    //Añade la ficha a un arraylist y lo pushea a los arreglos de fichas a y b para dibujarlos en el canvas
+    //Añade la ficha a un arraylist y lo pushea a los arreglos de fichas a y b 
+    //para dibujarlos en el canvas
     let circleRadius = 20;
     let posX, posY;
     const image = new Image();
     if (color === 'blue') {
-        posX = 100;
-        posY = 200;
+        posX = 98;
+        posY = 290;
         image.src = ("../fichas/" + jugadores[0].getNombre() +".png");
         let circle = new Ficha(posX, posY, color, circleRadius, ctx, image);
         fichasA.push(circle);
     } else if (color === 'red') {
-        posX = 700;
-        posY = 200;
+        posX = 1100;
+        posY = 290;
         image.src = ("../fichas/" + jugadores[1].getNombre() + ".png");
         let circle = new Ficha(posX, posY, color, circleRadius, ctx, image);
         fichasB.push(circle);
@@ -132,6 +135,7 @@ function actualizarTemporizador() {
     }
 }
 
+//Inicia el conteo del juego de 300 a 0
 function iniciarConteo() {
     const intervalId = setInterval(function () {
         if(terminado){
@@ -140,13 +144,13 @@ function iniciarConteo() {
             tiempoRestante--;
             if (tiempoRestante <= 0) {
                 actualizarTemporizador();
-                clearInterval(intervalId); // Detén el intervalo cuando llegues a 0 o menos
+                clearInterval(intervalId); // Detiene el intervalo cuando llegues a 0 o menos
                 mostrarMensajeGanador('Se acabó el tiempo');
             }else{
                 actualizarTemporizador();
             }
+            //Lo muestra por pantalla
             tiempo.textContent = 'Tiempo: ' + tiempoRestante;
-            console.log('Tiempo restante:' + tiempoRestante + 's');
         }
     }, 1000);
 }
@@ -180,6 +184,7 @@ function onMouseUp(e) {
         let jugador = juego.getCurrentPlayer();
 
         jugador.dropFicha(col, ficha, tablero, juego);
+        //Chequea si ganaron el juego, sino lanza la ficha en la posición donde se le indica
         juego.winGame();
         
     } else if(ficha != null && col === null) {
