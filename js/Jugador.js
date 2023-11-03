@@ -6,12 +6,6 @@ class Jugador{
         this.fichas = arr || [];
     }
 
-    //giveFichas(discos) {
-    //    console.log(discos);
-    //    this.fichas.concat(discos);
-    //    console.log(this.fichas);
-    //}
-
     getFichas(){
         console.log(this.fichas)
     }
@@ -34,7 +28,6 @@ class Jugador{
     moveDisc(cord, ficha) {
         console.log(this.fichas)
         if (this.fichasContains(ficha)) {
-            console.log("A");
 
             const targetX = cord.x;
             const targetY = cord.y;
@@ -63,8 +56,6 @@ class Jugador{
             animate();
             ficha.setResaltado(false);
             ficha.movido = true;
-        } else {
-            console.log("B");
         }
 
 

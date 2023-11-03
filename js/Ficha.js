@@ -1,15 +1,15 @@
 class Ficha {
 
-    constructor(posX, posY, radius, fill, context) {
+    constructor(posX, posY, fill, radius, context, image) {
         this.posX = posX;
         this.posY = posY;
         this.radius = radius;
         
-        //this.image = new Image();
         this.fill = fill;
 
+
         this.ctx = context;
-        this.resaltadoEstilo = 'black';
+        this.image = image;
         this.movido = false;
 
         this.posOriginalX = posX;
@@ -17,17 +17,17 @@ class Ficha {
     }
 
     draw() {
+        // Dibuja la imagen en el centro de la ficha
         this.ctx.fillStyle = this.fill;
         this.ctx.beginPath()
         this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
         this.ctx.fill()
-
-        if (this.resaltado === true) {
-            this.ctx.strokeStyle = this.resaltadoEstilo;
-            this.ctx.lineWidth = 5;
-            this.ctx.stroke();
-        }
         this.ctx.closePath();
+        if(this.image){
+            const imageX = this.posX - this.radius * 1.2; // Calcula la posición X de la imagen
+            const imageY = this.posY - this.radius * 1.2; // Calcula la posición Y de la imagen
+            this.ctx.drawImage(this.image, imageX, imageY, 50, 70); 
+            }
     }
 
     posOriginal(){
@@ -125,10 +125,6 @@ class Ficha {
         let _x = this.posX - x;
         let _y = this.posY - y;
         return Math.sqrt(_x * _x + _y * _y) < this.radius;
-    }
-
-    isWinner(){
-        this.resaltado = 'yellow';
     }
 
     setResaltado(resaltado) {

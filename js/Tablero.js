@@ -69,6 +69,122 @@ class Tablero {
 
     }
 
+    cellsConnect(connect) {
+        let connectedCells = this.connectHorizontal(connect);
+        if(connectedCells.length === 0){
+           connectedCells = this.connectVertical(connect);
+        }
+        if(connectedCells.length === 0) {
+           connectedCells = this.connectDiagonal(connect);
+        }
+        if(connectedCells.length === 0) {
+            connectedCells = this.connectAntiDiagonal(connect);
+         }
+        return connectedCells;
+    }
+
+    connectHorizontal(connect) {
+        const connectedCells = [];
+        for (let row = 0; row < this.rows; row++) {
+            for (let col = 0; col <= this.cols - connect; col++) {
+                if (this.matrix[row][col] !== null) {
+                    let firstCircle = this.matrix[row][col];
+                    const inLineCells = [firstCircle];
+                    for (let i = 1; i < connect; i++) {
+                        if (this.matrix[row][col + i] !== null) {
+                            if (firstCircle.compareTo(this.matrix[row][col + i])) {
+                                inLineCells.push(this.matrix[row][col + i]);
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+                    if (inLineCells.length === connect) {
+                        connectedCells.push(...inLineCells);
+                    }
+                }
+            }
+        }
+        return connectedCells;
+    }
+
+    connectVertical(connect) {
+        const connectedCells = [];
+        for (let row = 0; row <= this.rows - connect; row++) {
+            for (let col = 0; col < this.cols; col++) {
+                if (this.matrix[row][col] !== null) {
+                    let firstCircle = this.matrix[row][col];
+                    const inLineCells = [firstCircle];
+                    for (let i = 1; i < connect; i++) {
+                        if (this.matrix[row + i][col] !== null) { 
+                            if (firstCircle.compareTo(this.matrix[row + i][col])) {
+                                inLineCells.push(this.matrix[row + i][col]);
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+                    if (inLineCells.length === connect) {
+                        connectedCells.push(...inLineCells);
+                    }
+                }
+            }
+        }
+        return connectedCells;
+    }
+
+    connectDiagonal(connect) {
+        const connectedCells = [];
+        for (let row = 0; row <= this.rows - connect; row++) {
+            for (let col = 0; col <= this.cols - connect; col++) {
+                if (this.matrix[row][col] !== null) {
+                    let firstCircle = this.matrix[row][col];
+                    const inLineCells = [firstCircle];
+                    for (let i = 1; i < connect; i++) {
+                        if (this.matrix[row + i][col - i] !== null) {
+                            if (firstCircle.compareTo(this.matrix[row + i][col - i])) {
+                                inLineCells.push(this.matrix[row + i][col - i]);
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+                    if (inLineCells.length === connect) {
+                        connectedCells.push(...inLineCells);
+                    }
+                }
+            }
+        }
+        return connectedCells;
+    }
+
+    connectAntiDiagonal(connect) {
+        const connectedCells = [];
+        for (let row = 0; row <= this.rows - connect; row++) {
+            for (let col = 0; col <= this.cols - connect; col++) {
+                if (this.matrix[row][col] !== null) {
+                    let firstCircle = this.matrix[row][col];
+                    const inLineCells = [firstCircle];
+                    for (let i = 1; i < connect; i++) {
+                        console.log(row, col)
+                        console.log(row + i, col + i)
+                        if (this.matrix[row + i][col + i] !== null) {
+                            if (firstCircle.compareTo(this.matrix[row + i][col + i])) {
+                                inLineCells.push(this.matrix[row + i][col + i]);
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+                    if (inLineCells.length === connect) {
+                        connectedCells.push(...inLineCells);
+                    }
+                }
+            }
+        }
+        return connectedCells;
+    }
+
 
     coordCell(row, col) {
         const x = this.startX + col * this.cellSize + this.cellSize / 2;

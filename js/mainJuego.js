@@ -2,6 +2,7 @@ let canvas = document.querySelector('#canvas');
 let ctx = canvas.getContext('2d');
 
 let turn = document.getElementById('turn');
+let tiempo = document.getElementById('tiempo');
 const tipoJuego = document.getElementById('opciones');
 const play = document.getElementById('play');
 const formulario = document.getElementById('selector');
@@ -9,6 +10,8 @@ const formulario = document.getElementById('selector');
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 let ficha = null;
+let terminado = false;
+let tiempoRestante = 300; // Tiempo en segundos
 let jugadores = [];
 let figures = [];
 let fichasA = [];
@@ -30,9 +33,8 @@ let isMouseDown = false;
 
 function crearJuego() {
     //Creo el juego inicializando cada método necesario (tablero, juego, fichas, etc...)
-    if(juego.gameOver){
-        return;
-    }
+    clearCanvas();
+    iniciarConteo();
     let cellSize = 60;
     let valor = tipoJuego.value;
     let rows = parseInt(valor) + 2;
@@ -52,12 +54,12 @@ function crearJuego() {
 formulario.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // name1 = document.getElementById('jugador1').value;
-    // name2 = document.getElementById('jugador2').value;
+    name1 = document.getElementById('jugador-1').value;
+    name2 = document.getElementById('jugador-2').value;
 
-    jugador1.setNombre("Atacantes");
-    jugador2.setNombre("Defensores");
-
+    jugador1.setNombre(name1);
+    jugador2.setNombre(name2);
+    
     crearJuego();
 
 });
@@ -75,6 +77,7 @@ function addFigure() {
     }
     update();
 }
+
 
 function update(c) {
     // Limpia el canvas
@@ -98,21 +101,54 @@ function addCircle(color) {
     //Añade la ficha a un arraylist y lo pushea a los arreglos de fichas a y b para dibujarlos en el canvas
     let circleRadius = 20;
     let posX, posY;
+    const image = new Image();
     if (color === 'blue') {
         posX = 100;
         posY = 200;
-        let circle = new Ficha(posX, posY, circleRadius, color, ctx);
+        image.src = ("../fichas/" + jugadores[0].getNombre() +".png");
+        let circle = new Ficha(posX, posY, color, circleRadius, ctx, image);
         fichasA.push(circle);
     } else if (color === 'red') {
         posX = 700;
         posY = 200;
-        let circle = new Ficha(posX, posY, circleRadius, color, ctx);
+        image.src = ("../fichas/" + jugadores[1].getNombre() + ".png");
+        let circle = new Ficha(posX, posY, color, circleRadius, ctx, image);
         fichasB.push(circle);
 
     }
 
-    let circle = new Ficha(posX, posY, circleRadius, color, ctx);
+    let circle = new Ficha(posX, posY, color, circleRadius, ctx, image);
     figures.push(circle);
+}
+function actualizarTemporizador() {
+    if(!terminado){
+        if (tiempoRestante <= 0) {
+            // Si el tiempo se acaba, termina el juego
+            terminado = true;
+            alert('Se acabó el tiempo');
+            window.location.reload();
+        }
+        const mensaje = `${tiempoRestante}`;
+    }
+}
+
+function iniciarConteo() {
+    const intervalId = setInterval(function () {
+        if(terminado){
+            clearInterval(intervalId);
+        }else{
+            tiempoRestante--;
+            if (tiempoRestante <= 0) {
+                actualizarTemporizador();
+                clearInterval(intervalId); // Detén el intervalo cuando llegues a 0 o menos
+                mostrarMensajeGanador('Se acabó el tiempo');
+            }else{
+                actualizarTemporizador();
+            }
+            tiempo.textContent = 'Tiempo: ' + tiempoRestante;
+            console.log('Tiempo restante:' + tiempoRestante + 's');
+        }
+    }, 1000);
 }
 
 function onMouseDown(e) {
@@ -144,10 +180,8 @@ function onMouseUp(e) {
         let jugador = juego.getCurrentPlayer();
 
         jugador.dropFicha(col, ficha, tablero, juego);
-        juego.checkWinner()
-
-        console.log(juego.gameOver)
-        //console.log(tablero.matrix);
+        juego.winGame();
+        
     } else if(ficha != null && col === null) {
         ficha.posOriginal();
     }
