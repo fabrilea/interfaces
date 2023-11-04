@@ -119,6 +119,8 @@ function addCircle(color) {
     let circleRadius = 20;
     let posX, posY;
     const image = new Image();
+    //Si el color indicado es 'blue' crea el objeto y lo pushea en el arraylista A, 
+    //si es red, hace lo mismo y lo pushea al arraylist B
     if (color === 'blue') {
         posX = 98;
         posY = 290;
@@ -177,10 +179,12 @@ function onMouseDown(e) {
         lastClickedFigure = null;
     }
     let jugador = juego.getCurrentPlayer();
+    //Verifica que el objeto donde se esté presionando sea el jugador de turno, sino no lo mueve
     let clickFig = findClickedFigure(e.layerX, e.layerY);
     if (clickFig != null && jugador.fichasContains(clickFig)) {
         lastClickedFigure = clickFig;
     }
+    //Actualiza el canvas
     update();
 }
 
@@ -196,7 +200,7 @@ function onMouseUp(e) {
         let jugador = juego.getCurrentPlayer();
 
         jugador.dropFicha(col, ficha, tablero, juego);
-        //Chequea si ganaron el juego, sino lanza la ficha en la posición donde se le indica
+        //Chequea la posición donde se lanza la ficha, ve si ganaron el juego, sino continua la partida
         juego.winGame();
         
     } else if(ficha != null && col === null) {
@@ -217,14 +221,6 @@ function onMouseMove(e) {
 function clearCanvas() {
     //Borra el objeto anterior para dar paso al que se mueve, lo borra y dibuja continuamente
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-}
-
-function randomRGBA() {
-    let r = Math.round(Math.random() * 255);
-    let g = Math.round(Math.random() * 255);
-    let b = Math.round(Math.random() * 255);
-    let a = 255;
-    return `rgba(${r}, ${g}, ${b}, ${a})`;
 }
 
 function addFigures() {

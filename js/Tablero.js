@@ -118,7 +118,7 @@ class Tablero {
         return connectedCells;
     }
 
-    //Se repiten las explicación para las siguientes, 
+    //Se repiten la explicación para las siguientes, 
     //sólo cambia el recorrido de las matrices dependiendo del caso
     connectVertical(connect) {
         const connectedCells = [];

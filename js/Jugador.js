@@ -64,6 +64,7 @@ class Jugador{
 
     }
 
+    //Get y Set de Nombre
     getNombre(){
         return this.nombre;
     }
