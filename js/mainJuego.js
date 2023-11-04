@@ -103,13 +103,14 @@ function update(c) {
     //Luego se encarga de dibujar el tablero y las fichas al mostrarlos en el canvas
     ctx.fillRect(200, 600, 200, 20);
 
-    //
+    //Dibuja las fichas en el canvas dependiendo de la cantidad que hay en el arreglo
     for (let i = 0; i < figures.length; i++) {
         figures[i].draw();
     }
 }
 
 function getRandomNumber(min, max) {
+    //Obtiene un número aleatorio y lo redondea
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -135,7 +136,7 @@ function addCircle(color) {
         fichasB.push(circle);
 
     }
-
+    //Mete las fichas dentro del array 'figures' para mostrarlas por pantalla
     let circle = new Ficha(posX, posY, color, circleRadius, ctx, image);
     figures.push(circle);
 }
@@ -147,7 +148,6 @@ function actualizarTemporizador() {
             alert('Se acabó el tiempo');
             window.location.reload();
         }
-        const mensaje = `${tiempoRestante}`;
     }
 }
 
@@ -159,16 +159,13 @@ function iniciarConteo() {
         }else{
             tiempoRestante--;
             if (tiempoRestante <= 0) {
-                actualizarTemporizador();
+                actualizarTemporizador();//Va chequeando el estado del tiempo
                 clearInterval(intervalId); // Detiene el intervalo cuando llegues a 0 o menos
-                mostrarMensajeGanador('Se acabó el tiempo');
-            }else{
-                actualizarTemporizador();
             }
             //Lo muestra por pantalla
             tiempo.textContent = 'Tiempo: ' + tiempoRestante;
         }
-    }, 1000);
+     } , 1000);
 }
 
 function onMouseDown(e) {

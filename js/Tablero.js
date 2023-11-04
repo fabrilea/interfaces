@@ -94,11 +94,11 @@ class Tablero {
             for (let col = 0; col <= this.cols - connect; col++) {
                 //Verifica que la posición consultada no esté vacía
                 if (this.matrix[row][col] !== null) {
-                    //Recuerda la primer posición de la ficha de 4,5,6,7 en linea
+                    //Recuerda la posición de la ficha de 4,5,6,7 en linea
                     let firstCircle = this.matrix[row][col];
                     const inLineCells = [firstCircle];
                     for (let i = 1; i < connect; i++) {
-                        //Compara la posición de esa ficha, que termina siendo la última, 
+                        //Compara la posición de esa ficha, que termina siendo la última lanzada, 
                         //y va recorriendo la matriz, buscando coincidencias
                         if (this.matrix[row][col + i] !== null) {
                             if (firstCircle.compareTo(this.matrix[row][col + i])) {
@@ -124,10 +124,14 @@ class Tablero {
         const connectedCells = [];
         for (let row = 0; row <= this.rows - connect; row++) {
             for (let col = 0; col < this.cols; col++) {
+                //Verifica que la posición consultada no esté vacía
                 if (this.matrix[row][col] !== null) {
+                    //Recuerda la primer posición de la ficha de 4,5,6,7 en linea
                     let firstCircle = this.matrix[row][col];
                     const inLineCells = [firstCircle];
                     for (let i = 1; i < connect; i++) {
+                        //Compara la posición de esa ficha, que termina siendo la última lanzada, 
+                        //y va recorriendo la matriz, buscando coincidencias
                         if (this.matrix[row + i][col] !== null) { 
                             if (firstCircle.compareTo(this.matrix[row + i][col])) {
                                 inLineCells.push(this.matrix[row + i][col]);
@@ -136,6 +140,7 @@ class Tablero {
                             }
                         }
                     }
+                    //Si las coincidencias dentro del arreglo son igual 4, gana por ese método
                     if (inLineCells.length === connect) {
                         connectedCells.push(...inLineCells);
                     }
@@ -149,10 +154,14 @@ class Tablero {
         const connectedCells = [];
         for (let row = 0; row <= this.rows - connect; row++) {
             for (let col = 0; col <= this.cols - connect; col++) {
+                //Verifica que la posición consultada no esté vacía
                 if (this.matrix[row][col] !== null) {
+                    //Recuerda la posición de la ficha de 4,5,6,7 en linea
                     let firstCircle = this.matrix[row][col];
                     const inLineCells = [firstCircle];
                     for (let i = 1; i < connect; i++) {
+                        //Compara la posición de esa ficha, que termina siendo la última lanzada, 
+                        //y va recorriendo la matriz, buscando coincidencias
                         if (this.matrix[row + i][col - i] !== null) {
                             if (firstCircle.compareTo(this.matrix[row + i][col - i])) {
                                 inLineCells.push(this.matrix[row + i][col - i]);
@@ -161,6 +170,7 @@ class Tablero {
                             }
                         }
                     }
+                    //Si las coincidencias dentro del arreglo son igual 4, gana por ese método
                     if (inLineCells.length === connect) {
                         connectedCells.push(...inLineCells);
                     }
@@ -174,12 +184,14 @@ class Tablero {
         const connectedCells = [];
         for (let row = 0; row <= this.rows - connect; row++) {
             for (let col = 0; col <= this.cols - connect; col++) {
+                //Verifica que la posición consultada no esté vacía
                 if (this.matrix[row][col] !== null) {
+                    //Recuerda la posición de la ficha de 4,5,6,7 en linea
                     let firstCircle = this.matrix[row][col];
                     const inLineCells = [firstCircle];
                     for (let i = 1; i < connect; i++) {
-                        console.log(row, col)
-                        console.log(row + i, col + i)
+                        //Compara la posición de esa ficha, que termina siendo la última lanzada, 
+                        //y va recorriendo la matriz, buscando coincidencias
                         if (this.matrix[row + i][col + i] !== null) {
                             if (firstCircle.compareTo(this.matrix[row + i][col + i])) {
                                 inLineCells.push(this.matrix[row + i][col + i]);
@@ -188,6 +200,7 @@ class Tablero {
                             }
                         }
                     }
+                    //Si las coincidencias dentro del arreglo son igual 4, gana por ese método
                     if (inLineCells.length === connect) {
                         connectedCells.push(...inLineCells);
                     }
