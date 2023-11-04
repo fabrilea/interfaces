@@ -90,35 +90,43 @@
             </a>
         </div>
     </div>
-    <main class="main">
+    <main class="main" id="main">
         <h4 class="fino">home >> 2 jugadores >> castle defense</h4>
-        <div class="juego">
+        <div class="juego" id="juego">
             <h2 id="tiempo"></h2>
             <div class="elementos">
-            <div class="barra-izquierda"></div>
-            <div class="barra-derecha"></div>
-            <canvas class="canvas" id="canvas" width="1200" height="600"></canvas>
+                <div class="barra-izquierda"></div>
+                <div class="barra-derecha"></div>
+                <canvas class="canvas" id="canvas" width="1200" height="600"></canvas>
             </div>
-            <h2 id="turn"></h2>
-            <form id="selector">
-                <select id="jugador-1">
-                    <option value="León">León</option>
-                    <option value="Unicornio">Unicornio</option>
-                    <option value="Fénix">Fénix</option>
-                </select>
-                <select id="jugador-2">
-                    <option value="Dragón">Dragón</option>
-                    <option value="Lobo">Lobo</option>
-                    <option value="Grifo">Grifo</option>
-                </select>
-                <select id="opciones">
-                    <option value="4">4 en Linea</option>
-                    <option value="5">5 en Linea</option>
-                    <option value="6">6 en Linea</option>
-                    <option value="7">7 en Linea</option>
-                </select>
-                <button type="submit" id="play">Jugar</button>
-            </form>
+            <div class="opciones">
+                <h2 id="turn"></h2>
+                <div class="oculto-btn">
+                    <button type="click">Reiniciar</button>
+                </div>
+            </div>
+            <div class="botones">
+                            <form id="selector">
+                    <select id="jugador-1">
+                        <option value="León">León</option>
+                        <option value="Unicornio">Unicornio</option>
+                        <option value="Fénix">Fénix</option>
+                    </select>
+                    <select id="jugador-2">
+                        <option value="Dragón">Dragón</option>
+                        <option value="Lobo">Lobo</option>
+                        <option value="Grifo">Grifo</option>
+                    </select>
+                    <select id="opciones">
+                        <option value="4">4 en Linea</option>
+                        <option value="5">5 en Linea</option>
+                        <option value="6">6 en Linea</option>
+                        <option value="7">7 en Linea</option>
+                    </select>
+                    <button type="submit" id="play">Jugar</button>
+                </form>   
+            </div>
+
         </div>
         <div class="oculto" id="comp-box">
             <div class="box-head">

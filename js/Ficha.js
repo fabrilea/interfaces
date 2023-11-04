@@ -1,5 +1,6 @@
 class Ficha {
 
+    //Llamo a todos los elementos para crear el objeto Ficha
     constructor(posX, posY, fill, radius, context, image) {
         this.posX = posX;
         this.posY = posY;
@@ -24,13 +25,17 @@ class Ficha {
         this.ctx.fill()
         this.ctx.closePath();
         if(this.image){
-            const imageX = this.posX - this.radius * 1.2; // Calcula la posición X de la imagen
-            const imageY = this.posY - this.radius * 1.2; // Calcula la posición Y de la imagen
+            const imageX = this.posX - this.radius * 1.2; 
+            // Calcula la posición X de la imagen
+            const imageY = this.posY - this.radius * 1.2; 
+            // Calcula la posición Y de la imagen
             this.ctx.drawImage(this.image, imageX, imageY, 50, 70); 
+            //Lo dibuja
             }
     }
 
     posOriginal(){
+        //Busca la posición original para mandar coordenadas
         const cord = { x: this.posOriginalX, y: this.posOriginalY };
         this.returnTo(cord);
 
@@ -41,6 +46,7 @@ class Ficha {
     }
 
     returnTo(cord){
+        //Si el objeto es movido a un direcció no posible se devuelve gradualmente
         if(!this.movido){
             const targetX = cord.x;
             const targetY = cord.y;
@@ -63,6 +69,7 @@ class Ficha {
                 this.setPositionAnimacion(this.posX + dx, this.posY + dy);
                 this.draw();
     
+                //Se va animando por frames
                 requestAnimationFrame(animate);
                 this.ctx.closePath();
             };
@@ -82,14 +89,14 @@ class Ficha {
         const animate = () => {
             update();
             this.ctx.beginPath()
-            // Verifica si el círculo ha llegado a la posición objetivo
+            // Verifica si la ficha ha llegado a la posición objetivo
             if (Math.abs(this.posX - targetX) < Math.abs(dx) || Math.abs(this.posY - targetY) < Math.abs(dy)) {
                 this.setPositionAnimacion(targetX, targetY);
                 this.draw();
                 return;
             }
 
-            // Mueve el círculo gradualmente
+            // Mueve la ficha gradualmente
             this.setPositionAnimacion(this.posX + dx, this.posY + dy);
             this.draw();
 
@@ -97,11 +104,11 @@ class Ficha {
             this.ctx.closePath();
         };
         animate();
-        this.setResaltado(false);
         this.movido = true;
     }
 
 
+    //Getters y Setters
     getPosition() {
         return {
             x: this.getPosX(),
@@ -121,18 +128,11 @@ class Ficha {
         return this.radius;
     }
 
+    //Chequea si el cursor está encima del objeto
     isPointInside(x, y) {
         let _x = this.posX - x;
         let _y = this.posY - y;
         return Math.sqrt(_x * _x + _y * _y) < this.radius;
-    }
-
-    setResaltado(resaltado) {
-        if (!this.movido) {
-            this.resaltado = resaltado;
-        } else {
-            this.resaltado = null;
-        }
     }
 
     setFill(fill) {

@@ -6,10 +6,12 @@ class Jugador{
         this.fichas = arr || [];
     }
 
+    //Obtiene un arreglo de fichas que muestra por consola
     getFichas(){
         console.log(this.fichas)
     }
 
+    //Verifica la ficha que se está moviendo
     fichasContains(ficha){
         for(const elem of this.fichas){
             if(elem.compareTo(ficha)){
@@ -19,12 +21,14 @@ class Jugador{
         return false;
     }
 
+    //Lanza la ficha y cambia el turno
     dropFicha(col, ficha, board,game){
         let cord = board.fillCol(col,ficha);
         ficha.moveTo(cord);
         game.switchTurn();
     }
 
+    //Mueve la ficha gradualmente
     moveDisc(cord, ficha) {
         console.log(this.fichas)
         if (this.fichasContains(ficha)) {
@@ -54,7 +58,6 @@ class Jugador{
                 ficha.ctx.closePath();
             };
             animate();
-            ficha.setResaltado(false);
             ficha.movido = true;
         }
 

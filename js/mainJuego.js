@@ -22,10 +22,12 @@ let tablero = new Tablero(6, 7, 60, 390, 20);//tablero por default
 let CANT_FIG = tablero.getSize();
 tablero.draw(ctx);
 
-let jugador1 = new Jugador("azul", fichasA);
-let jugador2 = new Jugador("rojo", fichasB);
+//Crear los jugadores, y les asigna un array específico de fichas
+let jugador1 = new Jugador(fichasA);
+let jugador2 = new Jugador(fichasB);
 jugadores.push(jugador1, jugador2);
 
+//Crea el objeto juego
 let juego = new Juego(jugadores, tablero, figures);
 
 let lastClickedFigure = null;
@@ -35,10 +37,12 @@ function crearJuego() {
     //Creo el juego inicializando cada método necesario (tablero, juego, fichas, etc...)
     clearCanvas();
     iniciarConteo();
+    //Asigna tamaño de la celda
     let cellSize = 60;
     let valor = tipoJuego.value;
+    //Creo el tablero ahora sí con el número en linea que ha sido seleccionado
     let rows = parseInt(valor) + 2;
-    let cols = (parseInt(valor) * 2 )-1 ;
+    let cols = (parseInt(valor) * 2 )-1;
     let tableroWidth = cols * cellSize;
     let startX = (canvasWidth - tableroWidth) / 2;
     let startY = 20;
@@ -53,15 +57,23 @@ function crearJuego() {
 //Se manda al nuevo tablero lo que el usuario pase por parametro 
 formulario.addEventListener('submit', function (event) {
     event.preventDefault();
-
+    let e = document.querySelector(".botones");
+    let btr = document.querySelector(".oculto-btn");
+    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
     name1 = document.getElementById('jugador-1').value;
     name2 = document.getElementById('jugador-2').value;
-
+    //Obtiene los nombres de los jugadores por parámetros,
+    //ordena los botones, ocultando los de jugar, y poniendo la linea de los turnos
+    //y el botón de reiniciar
     jugador1.setNombre(name1);
     jugador2.setNombre(name2);
-
-    play.innerHTML = "Reiniciar";
-
+    e.classList.toggle("oculto");
+    btr.classList.add("boton-de-reinicio");
+    //Si se aprieta el botón de reinicio, se recarga la página
+    btr.addEventListener("click", () => {
+        window.location.reload();
+    });
+    //Llama a la función crearJuego para crear el 4, 5, 6, 7 en línea
     crearJuego();
 
 });
@@ -84,12 +96,14 @@ function addFigure() {
 function update(c) {
     // Limpia el canvas
     clearCanvas();
+    //Dibuja el tablero
     tablero.draw(ctx,c);
     let jugador = juego.getCurrentPlayer();
     turn.textContent = 'Es el turno de: ' + jugador.getNombre();
     //Luego se encarga de dibujar el tablero y las fichas al mostrarlos en el canvas
     ctx.fillRect(200, 600, 200, 20);
 
+    //
     for (let i = 0; i < figures.length; i++) {
         figures[i].draw();
     }

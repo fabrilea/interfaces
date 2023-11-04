@@ -1473,7 +1473,7 @@ a {
     background-color: #58218b;
     border-radius: 20px;
     position: absolute;
-    margin-left: 2.6%;
+    margin-left: 3.2%;
 }
 
 .barra-derecha{
@@ -1482,7 +1482,7 @@ a {
     background-color: #58218b;
     border-radius: 20px;
     position: absolute;
-    margin-left: 55.25%;
+    margin-left: 69.25%;
 }
 
 .elementos{
@@ -1497,4 +1497,19 @@ a {
 
 .fino{
     margin-top: 2%;
+}
+
+.oculto-btn{
+    display: none;
+}
+
+
+.boton-de-reinicio{
+    display: block;
+    margin-left: 15px;
+}
+
+.opciones{
+    display: flex;
+    justify-content: space-around;
 }
