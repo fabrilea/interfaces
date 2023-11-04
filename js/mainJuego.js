@@ -22,9 +22,9 @@ let tablero = new Tablero(6, 7, 60, 390, 20);//tablero por default
 let CANT_FIG = tablero.getSize();
 tablero.draw(ctx);
 
-//Crear los jugadores, y les asigna un array específico de fichas
-let jugador1 = new Jugador(fichasA);
-let jugador2 = new Jugador(fichasB);
+//Crear los jugadores, y les asigna un array específico de fichas, y un nombre que luego se redefine
+let jugador1 = new Jugador("azul", fichasA);
+let jugador2 = new Jugador("rojo", fichasB);
 jugadores.push(jugador1, jugador2);
 
 //Crea el objeto juego
@@ -174,13 +174,11 @@ function onMouseDown(e) {
     isMouseDown = true;
 
     if (lastClickedFigure != null) {
-        lastClickedFigure.setResaltado(false);
         lastClickedFigure = null;
     }
     let jugador = juego.getCurrentPlayer();
     let clickFig = findClickedFigure(e.layerX, e.layerY);
     if (clickFig != null && jugador.fichasContains(clickFig)) {
-        clickFig.setResaltado(true);
         lastClickedFigure = clickFig;
     }
     update();

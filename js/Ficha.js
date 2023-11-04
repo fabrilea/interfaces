@@ -74,7 +74,6 @@ class Ficha {
                 this.ctx.closePath();
             };
             animate();
-            this.setResaltado(false);
         }
     }
     
