@@ -20,6 +20,6 @@ window.onload = function(){
     }
     setTimeout(callBack_func, 5000);
     function callBack_func() {
-        document.location.href = "paginaHome.html";
+        document.location.href = "html/paginaHome.html";
     }
 }
