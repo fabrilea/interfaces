@@ -16,8 +16,8 @@ let figures = [];
 let fichasA = [];
 let fichasB = [];
 
-//Creo mi juego, tablero ,jugadores y fichas tomando lo que me pase el usuario desde el DOM
-let tablero = new Tablero(6, 7, 60, 390, 20);//tablero por default
+//Creo mi juego, tablero ,jugadores y fichas tomando lo que me pase el usuario desde el selector
+let tablero = new Tablero(6, 7, 60, 390, 20);//Tablero por default
 let CANT_FIG = tablero.getSize();
 tablero.draw(ctx);
 
