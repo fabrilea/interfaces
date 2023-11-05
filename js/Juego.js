@@ -1,11 +1,15 @@
 class Juego {
     constructor(jugadores, tablero, fichas, connect) {
+        //Pasa las variables al connect, tablero, fichas y jugadores por constructor
         this.connect = connect;
         this.tablero = tablero;
         this.fichas = fichas;
-        this.jugadores = jugadores.slice(0, 2);//Sólo puedo tener 2 players, establenciendo un mínimo y un máximo de valores
-        this.currentTurn = 0; //Comienza con el primer jugador
-        this.lastPlayed = 1;//El contrario del jugador actual
+        this.jugadores = jugadores.slice(0, 2);
+        //Sólo puedo tener 2 jugadores, establenciendo un mínimo y un máximo de valores
+        this.currentTurn = 0; 
+        //Comienza con el primer jugador
+        this.lastPlayed = 1;
+        //El contrario del jugador actual
     }
 
     //Verifica el ganador, ejecuta una alerta que al clickearla reinicia la página

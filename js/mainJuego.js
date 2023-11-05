@@ -1,10 +1,9 @@
 let canvas = document.querySelector('#canvas');
 let ctx = canvas.getContext('2d');
 
-let turn = document.getElementById('turn');
+let turno = document.getElementById('turno');
 let tiempo = document.getElementById('tiempo');
 const tipoJuego = document.getElementById('opciones');
-const play = document.getElementById('play');
 const formulario = document.getElementById('selector');
 
 let canvasWidth = canvas.width;
@@ -23,8 +22,8 @@ let CANT_FIG = tablero.getSize();
 tablero.draw(ctx);
 
 //Crear los jugadores, y les asigna un array específico de fichas, y un nombre que luego se redefine
-let jugador1 = new Jugador("azul", fichasA);
-let jugador2 = new Jugador("rojo", fichasB);
+let jugador1 = new Jugador("Atacantes", fichasA);
+let jugador2 = new Jugador("Defensores", fichasB);
 jugadores.push(jugador1, jugador2);
 
 //Crea el objeto juego
@@ -99,7 +98,7 @@ function update(c) {
     //Dibuja el tablero
     tablero.draw(ctx,c);
     let jugador = juego.getCurrentPlayer();
-    turn.textContent = 'Es el turno de: ' + jugador.getNombre();
+    turno.textContent = 'Es el turno de: ' + jugador.getNombre();
     //Luego se encarga de dibujar el tablero y las fichas al mostrarlos en el canvas
     ctx.fillRect(200, 600, 200, 20);
 

@@ -634,6 +634,111 @@ a {
     margin-bottom: 2%;
 }
 
+.barra-izquierda{
+    height: 100px;
+    width: 100px;
+    background-color: #58218b;
+    border-radius: 20px;
+    position: absolute;
+    margin-left: 2.56%;
+}
+
+.barra-derecha{
+    height: 100px;
+    width: 100px;
+    background-color: #58218b;
+    border-radius: 20px;
+    position: absolute;
+    margin-left: 55.2%;
+}
+
+.elementos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.canvas{
+    position: relative;
+}
+
+.fino{
+    margin-top: 2%;
+}
+
+.oculto-btn{
+    display: none;
+}
+
+
+.boton-de-reinicio{
+    display: block;
+    margin-left: 15px;
+}
+
+.opciones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 2%;
+    background-color: #C50766;
+    margin: 2%;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.botones{
+    width: 90%;
+}
+
+.botones form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banderas{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 75%;
+    margin: 1% 3%;
+}
+
+.banderas select{
+    background-color: #7236BD;
+    color: white;
+    width: 90%;
+    height: 90%;
+    margin: 3%;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 20px;
+    padding-left: 3%;
+}
+
+.btn-play, .btn-reiniciar{
+    background-color: #7236BD;
+    color: white;
+    font-size: 1.2rem; 
+    font-style: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    border-radius: 30px;
+    padding: 5px 10px;
+    margin: 10px;
+    cursor: pointer;
+    border: 0;
+    font-family: Helvetica;
+}
+
+.btn-reiniciar{
+    background-color: #68153f;
+}
+
 .secciones {
     display: flex;
     flex-direction: column;
@@ -807,8 +912,7 @@ a {
     margin: 10px 0px;
 }
 
-.btn-cancelar,
-.btn-hecho {
+.btn-cancelar,.btn-hecho {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1465,51 +1569,4 @@ a {
         width: 50%;
     }
 
-}
-
-.barra-izquierda{
-    height: 100px;
-    width: 100px;
-    background-color: #58218b;
-    border-radius: 20px;
-    position: absolute;
-    margin-left: 3.2%;
-}
-
-.barra-derecha{
-    height: 100px;
-    width: 100px;
-    background-color: #58218b;
-    border-radius: 20px;
-    position: absolute;
-    margin-left: 69.25%;
-}
-
-.elementos{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.canvas{
-    position: relative;
-}
-
-.fino{
-    margin-top: 2%;
-}
-
-.oculto-btn{
-    display: none;
-}
-
-
-.boton-de-reinicio{
-    display: block;
-    margin-left: 15px;
-}
-
-.opciones{
-    display: flex;
-    justify-content: space-around;
 }
